@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard - Joblyft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Joblyft</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="post-job.html">Post a Job</a>
+            <a href="employer-dashboard.html" class="active">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Employer Dashboard</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Postings</h3>
+                    <p id="totalPostings">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Review</h3>
+                    <p id="pendingPostings">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Jobs</h3>
+                    <p id="activeJobs">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="filters">
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search jobs...">
+            </div>
+
+            <div class="jobs-table-container">
+                <table class="jobs-table">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company</th>
+                            <th>Posted Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobsTableBody">
+                        <!-- Job listings will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Job Details Modal -->
+    <div id="jobDetailsModal" class="modal">
+        <div class="modal-content">
+            <h2>Job Details</h2>
+            <div id="jobDetailsContent"></div>
+            <div class="modal-actions">
+                <button id="approveJob" class="btn-approve">Approve</button>
+                <button id="rejectJob" class="btn-reject">Reject</button>
+                <button id="closeModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="employer-dashboard.js"></script>
+</body>
+</html> 
